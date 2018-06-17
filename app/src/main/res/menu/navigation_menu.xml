@@ -10,4 +10,8 @@
         android:id="@+id/actionItem3" />
     <item android:title="Funny Clips"
         android:id="@+id/actionItem4" />
+    <item android:title="Rate App"
+        android:id="@+id/actionItem5" />
+    <item android:title="Share App"
+        android:id="@+id/actionItem6" />
 </menu>

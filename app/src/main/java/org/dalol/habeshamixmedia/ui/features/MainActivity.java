@@ -18,6 +18,7 @@ import com.google.android.gms.ads.AdView;
 
 import org.dalol.habeshamixmedia.R;
 import org.dalol.habeshamixmedia.common.callback.OnBackListener;
+import org.dalol.habeshamixmedia.delegates.MenusDelegate;
 import org.dalol.habeshamixmedia.ui.ViewHolders.BannerAdViewHolder;
 import org.dalol.habeshamixmedia.ui.base.BaseActivity;
 import org.dalol.habeshamixmedia.ui.controllers.FilmFragmentController;
@@ -79,6 +80,12 @@ public class MainActivity extends BaseActivity {
                         break;
                     case R.id.actionItem4:
                         showToast("Under development");
+                        break;
+                    case R.id.actionItem5:
+                        MenusDelegate.rate(getApplicationContext());
+                        break;
+                    case R.id.actionItem6:
+                        MenusDelegate.share(getApplicationContext());
                         break;
                 }
                 mDrawerLayout.closeDrawer(Gravity.START);
