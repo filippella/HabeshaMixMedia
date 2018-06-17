@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="font_family_corbert_regular">fonts/Corbert-Regular.otf</string>
+    <string name="font_family_corbert_light">fonts/corbert_light-webfont.ttf</string>
+    <string name="font_family_corbert_bold">fonts/corbert_bold-webfont.ttf</string>
+
+    <string name="font_family_eurostile">fonts/Eurostile-Regular.ttf</string>
+
+
+    <string name="font_family_futura_bold">fonts/futura_bold.ttf</string>
+    <string name="font_family_futura_light">fonts/futura_light.ttf</string>
+    <string name="font_family_futura_med">fonts/futura_med.ttf</string>
+</resources>

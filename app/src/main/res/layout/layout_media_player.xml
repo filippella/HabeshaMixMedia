@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/playerBg"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/image_singer_avatar"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="8dp">
+
+
+            <org.dalol.habeshamixmedia.ui.widgets.HMTextView
+                android:id="@+id/text_song_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:textColor="@color/colorWhite"
+                android:focusable="true"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:text="Singer name veryveryverlong"
+                android:textSize="14sp"
+                app:hm_text_font_style="@string/font_family_corbert_regular" />
+
+            <org.dalol.habeshamixmedia.ui.widgets.HMTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:text="ጥላሁን ገሰሰ"
+                app:hm_text_font_style="@string/font_family_corbert_regular"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="8dp"
+            android:tint="@color/colorWhite"
+            app:srcCompat="@drawable/ic_skip_previous_black_24dp" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/button_play"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:clickable="true"
+            android:tint="@color/colorWhite"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_play_arrow_black_24dp" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:clickable="true"
+            android:tint="@color/colorWhite"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="8dp"
+            app:srcCompat="@drawable/ic_skip_next_black_24dp" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="6dp"
+            android:tint="@color/colorWhite"
+            app:srcCompat="@drawable/ic_more_vert_black_24dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="4dp"
+        android:paddingEnd="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingStart="8dp"
+        android:paddingTop="4dp">
+
+        <org.dalol.habeshamixmedia.ui.widgets.HMTextView
+            android:id="@+id/text_elapsed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5:06"
+            android:textSize="14sp"
+            android:textColor="@color/colorWhite"
+            app:hm_text_font_style="@string/font_family_corbert_regular"  />
+
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/slider_player_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_margin="0dp"
+            android:textColor="@color/colorWhite"
+            android:layout_weight="1"
+            android:indeterminateOnly="false"
+            android:maxHeight="3dp"
+            android:padding="0dp"
+            android:progressDrawable="@drawable/player_slider_bg"
+            android:splitTrack="false"
+            android:thumb="@drawable/player_slider_thumb" />
+
+        <org.dalol.habeshamixmedia.ui.widgets.HMTextView
+            android:id="@+id/text_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7:13"
+            android:textSize="14sp"
+            android:textColor="@color/colorWhite"
+            app:hm_text_font_style="@string/font_family_corbert_regular"  />
+
+    </LinearLayout>
+
+</LinearLayout>

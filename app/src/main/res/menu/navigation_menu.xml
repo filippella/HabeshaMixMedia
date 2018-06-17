@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Hebesha Music Video Mix"
+        android:id="@+id/actionItem1"/>
+    <item android:title="Latest Music Videos"
+        android:id="@+id/actionItem2" />
+    <item android:title="Films"
+        android:id="@+id/actionItem3" />
+    <item android:title="Funny Clips"
+        android:id="@+id/actionItem4" />
+</menu>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HMTextView">
+        <attr name="hm_text_font_style" format="string|reference" />
+    </declare-styleable>
+</resources>

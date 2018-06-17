@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_player_slider_thumb">20dp</dimen>
+    <dimen name="dimen_genre_item_margin">5dp</dimen>
+    <dimen name="dimen_video_item_margin">8dp</dimen>
+    <dimen name="dimen_album_item_margin">8dp</dimen>
+</resources>

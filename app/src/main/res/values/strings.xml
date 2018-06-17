@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Habesha MixMedia</string>
+
+    <string name="openDrawer">Open</string>
+    <string name="closeDrawer">Close</string>
+    <!--<string name="admob_app_id">ca-app-pub-5489846298805329~6437187824</string>-->
+    <!--<string name="admob_banner_ad_unit_id">ca-app-pub-5489846298805329/2119255599</string>-->
+    <string name="admob_app_id">ca-app-pub-5489846298805329~1976670159</string>
+    <string name="admob_banner_ad_unit_id">ca-app-pub-5489846298805329/7270742321</string>
+    <string name="admob_interstitial_ad_unit_id">ca-app-pub-5489846298805329/2252002328</string>
+    <string name="admob_rewarded_ad_unit_id">ca-app-pub-5489846298805329/1677287251</string>
+
+</resources>

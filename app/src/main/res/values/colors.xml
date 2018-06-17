@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="status_dark">#2b272c</color>
+    <color name="toolbar_dark">#322E33</color>
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
+
+    <color name="colorPrimary">#322E33</color>
+    <color name="colorPrimaryDark">#2b272c</color>
+
+    <!--<color name="colorPrimary">#212121</color>-->
+    <!--<color name="colorPrimaryDark">#181818</color>-->
+
+    <!--<color name="colorPrimary">@color/toolbar_dark</color>-->
+    <!--<color name="colorPrimaryDark">@color/status_dark</color>-->
+    <!--<color name="colorAccent">#FF4081</color>-->
+    <color name="colorAccent">#673FB4</color>
+
+
+    <!--<color name="colorGraybb">#E4E7F0</color>-->
+    <color name="colorGraybb">@color/itemsBg</color>
+    <!--<color name="colorGrayTransparent">#70121212</color>-->
+    <color name="colorGrayTransparent">#80000000</color>
+
+    <color name="bg">#181818</color>
+    <!--<color name="bg">#212529</color>-->
+    <!--<color name="des">#343a40</color>-->
+    <color name="des">#282828</color>
+    <color name="des2">#313236</color>
+
+    <!--<color name="itemBg">#282828</color>-->
+    <color name="itemBg">#313131</color>
+    <!--<color name="itemsBg">#080808</color>-->
+    <color name="itemsBg">#121212</color>
+    <color name="playerBg">#383838</color>
+    <!--<color name="playerBg">#222326</color>-->
+    <color name="playerSeek">#2AB858</color>
+
+    <color name="colorDarkBg0">#141414</color>
+    <!--<color name="colorDarkBg0">#d4d4d4</color>-->
+    <color name="colorDarkBg1">#3A3A3A</color>
+    <color name="colorDarkBg2">#343434</color>
+
+    <color name="colorPrimaryText">#43586d</color>
+    <color name="colorSecondaryText">#7c92a7</color>
+
+
+    <color name="md_red">#D32F2F</color>
+    <color name="md_purple">#673AB7</color>
+    <color name="md_blue">#2196F3</color>
+    <color name="md_green">#43A047</color>
+    <color name="md_white">#FAFAFA</color>
+
+    <color name="md_amber">#FFC107</color>
+    <color name="md_lime">#CDDC39</color>
+    <color name="md_pink">#E91E63</color>
+    <color name="md_blue_grey">#78909C</color>
+
+    <color name="text_color_primary">#212121</color>
+    <color name="text_color_secondary">#424242</color>
+
+    <color name="text_color_primary_dark">#FAFAFA</color>
+    <color name="text_color_secondary_dark">#EEEEEE</color>
+
+
+    <color name="colorPink">#ff7581</color>
+    <color name="colorRed">#ff5741</color>
+    <color name="colorVibrantRed">#ff7575</color>
+
+    <color name="colorBrightGray">#eff2f7</color>
+    <color name="colorVeryLightGray">#F7F9FC</color>
+    <color name="colorDarkGray">#dce4f1</color>
+    <color name="colorLightGray2">#F1F1F1</color>
+    <color name="colorBlue">#2196f3</color>
+    <color name="colorBrightBlue">#1dcaff</color>
+    <color name="colorSoftBlue">#5586ee</color>
+
+    <color name="colorBlack0">#111314</color>
+    <color name="colorBlack1">#222326</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="colorLightBlue">#99c8f7</color>
+    <color name="colorLightGray">#F5F5F5</color>
+    <color name="colorGray">#b7b7b7</color>
+    <color name="colorTransparentSkyBlue">#3983BE00</color>
+    <color name="colorTransparentLight">#33BBFFFF</color>
+
+
+    <color name="music1colorAccent">#b220cc</color>
+    <color name="music1colorPrimary">#232323</color>
+    <color name="music1colorPrimaryDark">#020202</color>
+    <color name="music1fontGray">#999696</color>
+    <color name="music1fontRed">#ff3e02</color>
+    <color name="music2_gradient_action_bar_end">#00ffffff</color>
+    <color name="music2_gradient_action_bar_start">#6b000000</color>
+    <color name="music2colorAccent">#ff3e02</color>
+    <color name="music2colorPrimary">#232323</color>
+    <color name="music2colorPrimaryDark">#020202</color>
+    <color name="music2floatingBg">#ff3e02</color>
+    <color name="music2fontGray">#999696</color>
+    <color name="music3_gradient_action_bar_end">#00ffffff</color>
+    <color name="music3_gradient_action_bar_start">#6b000000</color>
+    <color name="music3colorAccent">#ff3e02</color>
+    <color name="music3colorPrimary">#232323</color>
+    <color name="music3colorPrimaryDark">#020202</color>
+    <color name="music3floatingBg">#ff3e02</color>
+    <color name="music3fontGray">#999696</color>
+    <color name="music3fontPlaying">#ff3e02</color>
+    <color name="music4colorAccent">#ff3e02</color>
+    <color name="music4colorPrimary">#232323</color>
+    <color name="music4colorPrimaryDark">#020202</color>
+    <color name="music4fontGray">#999696</color>
+    <color name="music4seek">#ff3e02</color>
+    <color name="music4seekBg">#999696</color>
+    <color name="music5colorAccent">#ff3e02</color>
+    <color name="music5colorPrimary">#232323</color>
+    <color name="music5colorPrimaryDark">#020202</color>
+    <color name="music5fontGray">#999696</color>
+    <color name="music5seek">#ff3e02</color>
+    <color name="music5seekBg">#999696</color>
+    <color name="colorRowItem">#282528</color>
+</resources>
