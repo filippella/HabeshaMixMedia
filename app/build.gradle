@@ -10,6 +10,22 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        release {
+            storeFile file("../config/signing/release_key.jks")
+            storePassword "habesha_mix_media@123"
+            keyAlias "Habesha_Mix_Media_App"
+            keyPassword "habesha_mix_media@123"
+        }
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
     buildTypes {
         release {
             minifyEnabled false
