@@ -12,14 +12,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-
 import org.dalol.habeshamixmedia.R;
 import org.dalol.habeshamixmedia.common.callback.OnBackListener;
 import org.dalol.habeshamixmedia.delegates.MenusDelegate;
 import org.dalol.habeshamixmedia.ui.ViewHolders.BannerAdViewHolder;
+import org.dalol.habeshamixmedia.ui.ViewHolders.InterstitialAdViewHolder;
 import org.dalol.habeshamixmedia.ui.base.BaseActivity;
 import org.dalol.habeshamixmedia.ui.controllers.FilmFragmentController;
 import org.dalol.habeshamixmedia.ui.controllers.MainFragmentController;
@@ -28,6 +25,7 @@ import org.dalol.habeshamixmedia.utilities.KeyboardUtils;
 
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Random;
 import java.util.WeakHashMap;
 
 /**
@@ -49,6 +47,7 @@ public class MainActivity extends BaseActivity {
     //    private SeekBar seekBar;
     private int mActivePosition = -1;
     private BannerAdViewHolder mBannerViewHolder;
+    private InterstitialAdViewHolder mInterstitialAd;
 
     @Override
     protected int getContentView() {
@@ -61,6 +60,8 @@ public class MainActivity extends BaseActivity {
 
         showHome();
 
+        mInterstitialAd = new InterstitialAdViewHolder(this, getString(R.string.admob_interstitial_ad_unit_id));
+
         mDrawerLayout = findViewById(R.id.mainNavigationDrawer);
         mNavigationView = findViewById(R.id.mainNavigationView);
         mBannerViewHolder = new BannerAdViewHolder(findViewById(R.id.adView));
@@ -68,6 +69,9 @@ public class MainActivity extends BaseActivity {
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (new Random().nextBoolean()) {
+                    mInterstitialAd.showAd();
+                }
                 switch (item.getItemId()) {
                     case R.id.actionItem1:
                         handleFragment(0, "TAG_MAIN_FRAGMENT_CONTROLLER");
