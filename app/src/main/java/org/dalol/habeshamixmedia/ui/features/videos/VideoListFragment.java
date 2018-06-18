@@ -127,7 +127,7 @@ public class VideoListFragment extends BaseChildFragment<VideoListPresenter> imp
 
     @Override
     public void onLoadVideoList(VideosVO videoVOS) {
-        loadMoreDataListener.canLoadMore(!TextUtils.isEmpty(videoVOS.getNextPageToken()));
+        loadMoreDataListener.canLoadMore(TextUtils.isEmpty(videoVOS.getNextPageToken()));
         loadMoreDataListener.setLoading(false);
         mNextPageToken = videoVOS.getNextPageToken();
         mVideoListAdapter.appendItems(videoVOS.getVideoVOS());
