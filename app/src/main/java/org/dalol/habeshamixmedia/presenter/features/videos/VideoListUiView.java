@@ -1,5 +1,6 @@
 package org.dalol.habeshamixmedia.presenter.features.videos;
 
+import org.dalol.habeshamixmedia.data.model.vo.VideosVO;
 import org.dalol.habeshamixmedia.data.model.vo.YoutubeVideoVO;
 import org.dalol.habeshamixmedia.presenter.base.CommonUiView;
 
@@ -12,5 +13,5 @@ import java.util.List;
  */
 public interface VideoListUiView extends CommonUiView {
 
-    void onLoadVideoList(List<YoutubeVideoVO> videoVOS);
+    void onLoadVideoList(VideosVO videoVOS);
 }

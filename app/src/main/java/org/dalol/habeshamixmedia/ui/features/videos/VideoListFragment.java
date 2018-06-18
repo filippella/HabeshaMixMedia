@@ -10,6 +10,7 @@ import org.dalol.habeshamixmedia.R;
 import org.dalol.habeshamixmedia.data.api.videos.YoutubeApi;
 import org.dalol.habeshamixmedia.data.callback.OnListItemClickListener;
 import org.dalol.habeshamixmedia.data.features.videos.VideoListUiData;
+import org.dalol.habeshamixmedia.data.model.vo.VideosVO;
 import org.dalol.habeshamixmedia.data.model.vo.YoutubeVideoVO;
 import org.dalol.habeshamixmedia.presenter.features.videos.VideoListPresenter;
 import org.dalol.habeshamixmedia.presenter.features.videos.VideoListUiView;
@@ -18,6 +19,7 @@ import org.dalol.habeshamixmedia.ui.extras.LinearItemsMarginDecorator;
 import org.dalol.habeshamixmedia.ui.extras.LoadMoreDataScrollListener;
 import org.dalol.habeshamixmedia.ui.features.players.YoutubeVideoPlayerFragment;
 import org.dalol.habeshamixmedia.ui.widgets.HMRefreshableListLayout;
+import org.dalol.habeshamixmedia.utilities.TextUtils;
 
 import java.util.List;
 
@@ -38,6 +40,8 @@ public class VideoListFragment extends BaseChildFragment<VideoListPresenter> imp
     private HMRefreshableListLayout mVideoListLayout;
     private VideoListAdapter mVideoListAdapter;
     private String mTitle;
+    private String mNextPageToken;
+    private String mChannelId;
 
     public static VideoListFragment newInstance(String title, String channelId) {
 
@@ -96,8 +100,8 @@ public class VideoListFragment extends BaseChildFragment<VideoListPresenter> imp
 
         Bundle arguments = getArguments();
         mTitle = arguments.getString(ARGS_TITLE);
-        String channelId = arguments.getString(ARGS_CHANNEL_ID);
-        if (channelId != null && presenter != null) {
+        mChannelId = arguments.getString(ARGS_CHANNEL_ID);
+        if (mChannelId != null && presenter != null) {
 
             String hopeMusic = "hoplessable";
             String hopeMusicChannel = "UCgdecrMD1EfiqFL_jlnPxvg";
@@ -105,7 +109,7 @@ public class VideoListFragment extends BaseChildFragment<VideoListPresenter> imp
             String amharicLyrics = "AhaduWubuZewdie";
             String amharicFilms = "UClE5X8V_7GJykqzYDARQjwg";
 
-            presenter.getVideoList(channelId);
+            presenter.getVideoList(mChannelId);
             //presenter.getChannelVideos(hopeMusic);
         }
     }
@@ -114,13 +118,19 @@ public class VideoListFragment extends BaseChildFragment<VideoListPresenter> imp
         @Override
         protected void onLoadMore(RecyclerView recyclerView, LoadMoreDataScrollListener listener) {
             listener.setLoading(true);
-            onShowToast("Load More...");
+            VideoListPresenter presenter = getPresenter();
+            if (presenter != null && !TextUtils.isEmpty(mNextPageToken)) {
+                presenter.getNextVideoList(mChannelId, mNextPageToken);
+            }
         }
     };
 
     @Override
-    public void onLoadVideoList(List<YoutubeVideoVO> videoVOS) {
-        mVideoListAdapter.setItems(videoVOS);
+    public void onLoadVideoList(VideosVO videoVOS) {
+        loadMoreDataListener.canLoadMore(!TextUtils.isEmpty(videoVOS.getNextPageToken()));
+        loadMoreDataListener.setLoading(false);
+        mNextPageToken = videoVOS.getNextPageToken();
+        mVideoListAdapter.appendItems(videoVOS.getVideoVOS());
         mVideoListLayout.setItemListProgressBarVisibility(false);
     }
 }

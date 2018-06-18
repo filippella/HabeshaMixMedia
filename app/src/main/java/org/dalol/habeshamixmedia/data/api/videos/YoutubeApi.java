@@ -23,6 +23,6 @@ public interface YoutubeApi {
     @GET("/youtube/v3/search?order=date&part=snippet&maxResults=50")
     Single<VideoListResponse> getVideoList(@Query("channelId") String channelId, @Query("key") String apiKey);
 
-    @GET("/youtube/v3/search?order=date&part=snippet&maxResults=25")
+    @GET("/youtube/v3/search?order=date&part=snippet&maxResults=50")
     Single<VideoListResponse> getNextVideoList(@Query("channelId") String channelId, @Query("pageInfo") String pageInfo, @Query("key") String apiKey);
 }

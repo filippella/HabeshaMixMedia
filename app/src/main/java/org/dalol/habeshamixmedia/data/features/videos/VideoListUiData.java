@@ -6,10 +6,8 @@ import org.dalol.habeshamixmedia.data.api.videos.YoutubeApi;
 import org.dalol.habeshamixmedia.data.base.UiData;
 import org.dalol.habeshamixmedia.data.model.response.channel.ChannelResponse;
 import org.dalol.habeshamixmedia.data.model.response.videos.VideoListResponse;
-import org.dalol.habeshamixmedia.data.model.vo.YoutubeVideoVO;
+import org.dalol.habeshamixmedia.data.model.vo.VideosVO;
 import org.dalol.habeshamixmedia.data.transformers.videos.VideoListTransformer;
-
-import java.util.List;
 
 import io.reactivex.Single;
 import io.reactivex.functions.Function;
@@ -31,11 +29,21 @@ public class VideoListUiData extends UiData {
         return mYoutubeApi.getChannel(username, YoutubeApi.YOUTUBE_API_KEY);
     }
 
-    public Single<List<YoutubeVideoVO>> getVideoList(String channelId) {
+    public Single<VideosVO> getVideoList(String channelId) {
         return mYoutubeApi.getVideoList(channelId, YoutubeApi.YOUTUBE_API_KEY)
-                .map(new Function<VideoListResponse, List<YoutubeVideoVO>>() {
+                .map(new Function<VideoListResponse, VideosVO>() {
                     @Override
-                    public List<YoutubeVideoVO> apply(VideoListResponse videoListResponse) throws Exception {
+                    public VideosVO apply(VideoListResponse videoListResponse) throws Exception {
+                        return new VideoListTransformer().transform(videoListResponse);
+                    }
+                });
+    }
+
+    public Single<VideosVO> getNextVideoList(String channelId, String pageInfo) {
+        return mYoutubeApi.getNextVideoList(channelId, pageInfo, YoutubeApi.YOUTUBE_API_KEY)
+                .map(new Function<VideoListResponse, VideosVO>() {
+                    @Override
+                    public VideosVO apply(VideoListResponse videoListResponse) throws Exception {
                         return new VideoListTransformer().transform(videoListResponse);
                     }
                 });

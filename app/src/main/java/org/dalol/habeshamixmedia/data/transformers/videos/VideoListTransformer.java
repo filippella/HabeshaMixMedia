@@ -5,6 +5,7 @@ import org.dalol.habeshamixmedia.data.model.response.videos.Items;
 import org.dalol.habeshamixmedia.data.model.response.videos.Snippet;
 import org.dalol.habeshamixmedia.data.model.response.videos.Thumbnails;
 import org.dalol.habeshamixmedia.data.model.response.videos.VideoListResponse;
+import org.dalol.habeshamixmedia.data.model.vo.VideosVO;
 import org.dalol.habeshamixmedia.data.model.vo.YoutubeVideoVO;
 import org.dalol.habeshamixmedia.data.transformers.Transformer;
 
@@ -16,12 +17,14 @@ import java.util.List;
  * @version 1.0.0
  * @since Sun, 17/06/2018 at 01:17.
  */
-public class VideoListTransformer implements Transformer<VideoListResponse, List<YoutubeVideoVO>> {
+public class VideoListTransformer implements Transformer<VideoListResponse, VideosVO> {
 
     @Override
-    public List<YoutubeVideoVO> transform(VideoListResponse input) throws Exception {
+    public VideosVO transform(VideoListResponse input) throws Exception {
         List<YoutubeVideoVO> videoVOs = new ArrayList<>();
+        String nextPageToken = "";
         if (input != null) {
+            nextPageToken = input.getNextPageToken();
             Items[] items = input.getItems();
             if (items != null) {
                 for (Items item : items) {
@@ -53,6 +56,6 @@ public class VideoListTransformer implements Transformer<VideoListResponse, List
                 }
             }
         }
-        return videoVOs;
+        return new VideosVO(videoVOs, nextPageToken);
     }
 }

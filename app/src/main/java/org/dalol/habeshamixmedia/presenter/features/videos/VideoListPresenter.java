@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import org.dalol.habeshamixmedia.data.features.videos.VideoListUiData;
 import org.dalol.habeshamixmedia.data.model.response.channel.ChannelResponse;
+import org.dalol.habeshamixmedia.data.model.vo.VideosVO;
 import org.dalol.habeshamixmedia.data.model.vo.YoutubeVideoVO;
 import org.dalol.habeshamixmedia.presenter.BasePresenter;
 
@@ -38,9 +39,23 @@ public class VideoListPresenter extends BasePresenter<VideoListUiView, VideoList
     }
 
     public void getVideoList(String channelId) {
-        subscribeWith(getUiData().getVideoList(channelId), new DisposableSingleObserver<List<YoutubeVideoVO>>() {
+        subscribeWith(getUiData().getVideoList(channelId), new DisposableSingleObserver<VideosVO>() {
             @Override
-            public void onSuccess(List<YoutubeVideoVO> videoVOS) {
+            public void onSuccess(VideosVO videoVOS) {
+                getUiView().onLoadVideoList(videoVOS);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                getUiView().onShowToast(e.getMessage());
+            }
+        });
+    }
+
+    public void getNextVideoList(String channelId, String pageInfo) {
+        subscribeWith(getUiData().getNextVideoList(channelId, pageInfo), new DisposableSingleObserver<VideosVO>() {
+            @Override
+            public void onSuccess(VideosVO videoVOS) {
                 getUiView().onLoadVideoList(videoVOS);
             }
 
